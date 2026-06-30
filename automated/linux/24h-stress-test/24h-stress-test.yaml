@@ -43,7 +43,7 @@ run:
     steps:
         - cd ./automated/linux/24h-stress-test/
         - case "$TEST" in
-        - stress_ng|stress_oom) ./24h-stress-test.sh -t "$TEST" -d "$DURATION" ;;
-        - stress_network) ./24h-stress-test.sh -t $TEST -d "$DURATION" -i "$INTERFACE" -l "$LINK" -m "$MD5" ;;
+        - stress_ng|stress_oom) ./24h-stress-test_modify.sh -t "$TEST" -d "$DURATION" ;;
+        - stress_network) ./24h-stress-test_modify.sh -t $TEST -d "$DURATION" -i "$INTERFACE" -l "$LINK" -m "$MD5" ;;
         - esac
         - ../../utils/send-to-lava.sh ./output/result.txt
